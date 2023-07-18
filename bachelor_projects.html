@@ -13,13 +13,12 @@
     <div class="container content">
       <h1 id="bachelor-projects-in-statistics">Bachelor projects in statistics</h1>
 
-<p>This pages outlines thesis projects in statistics for the bachelor’s
+<p>This page outlines thesis projects in statistics for the bachelor’s
 degree in mathematics or mathematics-economy at the University of
 Copenhagen. You may either pick one of the suggested topics or come up
 with your own project.</p>
 
-<p><strong>Info meeting: Monday, August 28, 3:15-4:00pm, in
-   [TBA] at HCØ.</strong></p>
+<p><strong>Info meeting: Monday, August 28, 3:15-4:00pm, [Room: TBA].</strong></p>
 
 <h2 id="formalities">Formalities</h2>
 
@@ -112,11 +111,11 @@ to be interested in the following:</p>
 <p>You are strongly encouraged to follow the recommendations outlined in
 the following <a href="download/writing_guide.pdf">writing guide</a>.</p>
 
-<p>As the project is applied it is important to ensure that your
-empirical results can be reproduced. For this it can be helpful to
-either work with R Markdown (and perhaps also Tidyverse) or using
-Jupyter notebooks, to keep track of the experiments you have
-performed. See also:</p>
+<p>As this is an applied project it is important that your empirical
+results can be reproduced. For this it can be helpful to either work
+with R Markdown (and perhaps also Tidyverse) or using Jupyter
+notebooks, to keep track of the experiments you have performed. See
+also:</p>
 
 <ul>
   <li><a href="https://r4ds.had.co.nz">R for Data Science</a> by Garrett Grolemund
@@ -135,23 +134,57 @@ Yihui Xie, J. J. Allaire, Garrett Grolemund</li>
 
 <h2 id="project-suggestions">Project suggestions</h2>
 
-<p>The following two projects are suggestions. For each of them data is
-available and a rough idea of what you could work on is provided. You
-are, however, encouraged to ajust the research question to your own
+<p>Below we suggest two potential projects. For each data is available
+and a rough idea of what you could work on is provided. You are,
+however, encouraged to ajust the research question to your own
 interests.</p>
 
-<p>If you have already have an applied data-based project of your own in
-mind, you can send me an email and ask whether it would be
-feasible. Please note that I may decline to supervise a specific
-project if it does not fall within my area of expertise.</p>
+<p>If you already have an applied data-based project of your own in mind,
+you can send me an email and ask whether it is feasible. Please note
+that I may decline to supervise a specific project if it does not fall
+within my area of expertise or does not seem sufficiently concrete.</p>
 
 <h3 id="project-1-biomass-prediction---comparing-confidence-intervals">Project 1: Biomass prediction - Comparing confidence intervals</h3>
 
-<p>TODO</p>
+<p>Quantifying the biomass due to trees is important to assess the stored
+carbon in a specific region. However, estimating the entire biomass in
+a region is a non-trivial task that often involves counting and
+measuring tree sizes. Recent advances in aerial and satellite remote
+sensing have provided high-resolution images of regions that together
+with deep-learning image analysis can be used to count each tree and
+provide its crown area and sometimes even height. Given individual
+tree samples for which the biomass as well as crown area and height
+has been recorded, one can learn a prediction model to predict biomass
+from crown area and height. This model can then be applied to the
+remote sensing data to estimate the biomass in large areas.</p>
+
+<p>The prediction models that have been used previously are simple
+power-law models that are generally fit using a log-log transformation
+in order to simplify the estimation. A further approach is to use
+non-linear least squares to directly fit the power-law models,
+however, this is often rejected by practioners as non-linear least
+squares does not come with the standard model-based prediction
+intervals. In this project, you should investigate, based on the tree
+biomass data, how the coverage of different types of non-parametric
+prediction intervals compare to the standard ones based on the log-log
+transform.</p>
+
+<p>The final report should include an overview of the data as well as a
+short introduction to any of the methods that were used in the
+analysis. The main part of the project should then outline the
+discoveries including a clear description of how the different
+prediction models were compared. The literature list below provides
+tutorials on two approaches to construct non-parametric prediction
+intervals: <em>conformal prediction</em> and <em>bootstrap</em>.</p>
 
 <h4 id="data">Data</h4>
 
-<p>TODO</p>
+<p>For this project you will analyze the data set used in <a href="https://www.sciencedirect.com/science/article/pii/S0378112722006478">Allometric
+equations to estimate the dry mass of Sahel woody plants mapped with
+very-high resolution satellite
+imagery</a>. It
+consists of samples of tree foilage, wood and root masses and
+corresponding crown area and height.</p>
 
 <h4 id="literature">Literature</h4>
 
@@ -172,30 +205,26 @@ research, which measures the microorganisms based on gene sequencing,
 has made significant progress on understanding the links between the
 microbiome and its host.</p>
 
-<p>One potential application of microbiome measurements is to use them as
-a diagnostic tool. For this one learns a predictive model that uses
-the microbiome to predict a specific phenotype that might be hard to
-measure in practice. An important problem with such predictive models
-is that they often do not generalize well to people with different
-characteristics than the participants in the training sample. In this
-project, you will investigate how to construct predictive models that
-are robust to distributional shifts (sometimes called distribution
-generalization). As a toy data set you can work with the publicily
-available ‘American Gut Project’ data, contains microbiome
-measurements and corresponding metadata (e.g., age, sex, BMI). A
-potential avenue to investigate might be to consider different types
-of variable selection procedures and analyze how they affect
-generalization performance.</p>
+<p>One application of microbiome measurements is to use them as a
+diagnostic tool. For this one learns a predictive model that uses the
+microbiome to predict a specific phenotype that might be hard to
+measure in practice. An important problem with predictive models is
+that they may not generalize well to new observations with different
+characteristics than in the training sample. In this project, you will
+investigate how to construct predictive models based on microbiome
+predictors that are robust to distributional shifts. You will work
+with the publicily available ‘American Gut Project’ data, which
+contains microbiome measurements and corresponding metadata (e.g.,
+age, sex, BMI). A potential avenue to investigate might be to consider
+different types of variable selection/screening procedures and analyze
+how they affect generalization performance.</p>
 
-<p>The final report should include an overview of data as well as a short
-introduction to any of the methods that were used in the analysis. The
-main part of the project should then outline the discoveries including
-a clear description of how the different prediction models were
-compared. The literature list below provides several tools and methods
-that can be used in the analysis.</p>
-
-<p>It is highly recommended to use Python for this project, but other
-software is allowed.</p>
+<p>The final report should include an overview of the data as well as a
+short introduction to any of the methods that were used in the
+analysis. The main part of the project should then outline the
+discoveries including a clear description of how the different
+prediction models were compared. The literature list below provides
+several tools and methods that can be used in the analysis.</p>
 
 <h4 id="data-1">Data</h4>
 
@@ -204,11 +233,6 @@ software is allowed.</p>
 initiative that enrolls regular people around the world (mainly USA and
 UK) and collects data from each participant (consisting of a gut
 microbiome sample and a questionnaire).</p>
-
-<ul>
-  <li>A preprocessed subset of data that is sufficient for this project is
-available at <a href="https://github.com/jacobbien/trac-reproducible">https://github.com/jacobbien/trac-reproducible</a>.</li>
-</ul>
 
 <h4 id="literature-1">Literature</h4>
 
@@ -242,13 +266,6 @@ formulations, proximal optimization, and microbiome data
 applications</a>. Extension of the
 log-contrast model to include sparsity penalty. Method is available
 as a <a href="https://github.com/Leo-Simpson/c-lasso">python package</a>.</p>
-  </li>
-  <li>
-    <p><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002687">Inferring Correlation Networks from Genomic Survey
-Data</a>. A
-method to construct a graphical network on sequencing data. Method
-is available as a <a href="https://github.com/dlegor/SparCC">python
-package</a>.</p>
   </li>
 </ul>
 
